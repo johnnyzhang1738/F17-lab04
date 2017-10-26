@@ -3,14 +3,13 @@ import java.awt.geom.GeneralPath; // combinations of lines and curves
 import java.awt.Shape; // general class for shapes
 
 import java.awt.geom.Line2D; 
-import java.awt.geom.Rectangle2D;
 import java.awt.geom.Ellipse2D;
 
 import edu.ucsb.cs56.drawings.utilities.ShapeTransforms;
 import edu.ucsb.cs56.drawings.utilities.GeneralPathWrapper;
 
 /**
-   A vector drawing of a house that implements
+   A vector drawing of glasses
    the Shape interface, and so can be drawn, as well as
    rotated, scaled, etc.
       
@@ -19,7 +18,7 @@ import edu.ucsb.cs56.drawings.utilities.GeneralPathWrapper;
    @version for CS56, F17, UCSB
    
 */
-public class House extends GeneralPathWrapper implements Shape
+public class Glasses extends GeneralPathWrapper implements Shape
 {
     /**
        Constructor
@@ -29,7 +28,7 @@ public class House extends GeneralPathWrapper implements Shape
        @param width width of the house
        @param height of house (including first story and second story)
     */
-    public House(double x, double y, double width, double height)
+    public Glasses(double x, double y, double width, double height)
     {
 	
         // Rather than having to scale at the end, we can just
@@ -40,15 +39,16 @@ public class House extends GeneralPathWrapper implements Shape
 
 		double glassesWidth = width / 4;
 		double frameY = y + height / 2;
-		Ellipse2D leftLense = new Ellipse2D(x, y, glassesWidth, height);
-		Ellipse2D rightLense = new Ellipse2D(x, y, glassesWidth, height);
-		Line2D rightFrame = new Line2D(x, frameY, x + width, frameY);
+		Ellipse2D leftLense = new Ellipse2D.Double(x, y, glassesWidth, height);
+		Ellipse2D rightLense = new Ellipse2D.Double(x, y, glassesWidth, height);
+		Line2D rightFrame = new Line2D.Double(x + 2 * glassesWidth, frameY, x + width - 2 * glassesWidth, frameY);
+		//Line2D rightFrame = new Line2D(x, frameY, x + width, frameY);
 	
         // put the whole house together
 	
-        GeneralPath wholeHouse = this.get();
-        wholeHouse.append(firstStory, false);
-        wholeHouse.append(leftRoof, false);
-        wholeHouse.append(rightRoof, false);    
+        GeneralPath glasses = this.get();
+        glasses.append(leftLense, false);
+        glasses.append(rightLense, false);
+        glasses.append(rightFrame, false);    
     }
 }
