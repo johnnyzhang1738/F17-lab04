@@ -22,7 +22,7 @@ public class SimpleGui1 {
 	
 	JButton button = new JButton("Please Click Me Beast Daddy") ;
 	
-	java.awt.Color myColor = new java.awt.Color(48,150,207);   // R, G, B values.
+	java.awt.Color myColor = new java.awt.Color(37,46,255);   // R, G, B values.
 	button.setBackground(myColor);
 	button.setOpaque(true);
 	
