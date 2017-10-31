@@ -12,24 +12,23 @@ import javax.swing.*;
 */
 
 public class SimpleGui1 {
+/** main method to fire up a JFrame on the screen
+   @param args not used
+*/
 
-    /** main method to fire up a JFrame on the screen
-	@param args not used
-    */
+      public static void main (String[] args) {
+        	JFrame frame = new JFrame() ;
 
-    public static void main (String[] args) {
-	JFrame frame = new JFrame() ;
+        	JButton button = new JButton("Click me you filthy animal") ;
+          button.setOpaque(true);
 
-	JButton button = new JButton("Click me you filthy animal") ;
-  button.setOpaque(true);
+        	java.awt.Color myColor = new java.awt.Color(102,204,255);   // R, G, B values.
+        	button.setBackground(myColor);
+        	button.setOpaque(true);
 
-	java.awt.Color myColor = new java.awt.Color(102,204,255);   // R, G, B values.
-	button.setBackground(myColor);
-	button.setOpaque(true);
-
-	frame. setDefaultCloseOperation(JFrame. EXIT_ON_CLOSE) ;
-	frame. getContentPane() . add(button) ;
-	frame. setSize(300,300) ;
-	frame. setVisible(true) ;
-    }
+        	frame. setDefaultCloseOperation(JFrame. EXIT_ON_CLOSE) ;
+        	frame. getContentPane() . add(button) ;
+        	frame. setSize(300,300) ;
+        	frame. setVisible(true) ;
+     }
 }
