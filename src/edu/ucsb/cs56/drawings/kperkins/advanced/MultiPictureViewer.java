@@ -6,8 +6,8 @@ import javax.swing.JFrame;
  *  just three simple Java graphics objects, namely
  *  Rectangle, Line2D.Double, Ellipse2D.Double
  *  
- * @author P. Conrad 
- * @version for UCSB CS56, W16
+ * @author Kate Perkins 
+ * @version for UCSB CS56, F17
  */
 
 public class MultiPictureViewer

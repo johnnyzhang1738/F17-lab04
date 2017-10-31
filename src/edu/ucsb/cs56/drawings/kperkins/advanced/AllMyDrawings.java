@@ -66,35 +66,32 @@ public class AllMyDrawings
     }
     
     
-    /** Draw a picture with a few houses and coffee cups
+    /** Draw a picture with a few ice cream cones with and without toppings
      */
     public static void drawPicture2(Graphics2D g2) {
 	
 	// Draw some coffee cups.
+	IceCreamCone large = new IceCreamCone(100,50,225,150);
+	IceCreamCone small = new IceCreamCone(20,50,40,30);
+	IceCreamCone tall = new IceCreamCone(20,150,20,40);
 	
-	CoffeeCup large = new CoffeeCup(100,50,225,150);
-	CoffeeCup smallCC = new CoffeeCup(20,50,40,30);
-	CoffeeCup tallSkinny = new CoffeeCup(20,150,20,40);
-	CoffeeCup shortFat = new CoffeeCup(20,250,40,20);
+	g2.setColor(Color.MAGENTA);     g2.draw(large);
+	g2.setColor(Color.GREEN);   g2.draw(small);
+	g2.setColor(Color.BLUE);    g2.draw(tall);
 	
-	g2.setColor(Color.RED);     g2.draw(large);
-	g2.setColor(Color.GREEN);   g2.draw(smallCC);
-	g2.setColor(Color.BLUE);    g2.draw(tallSkinny);
-	g2.setColor(Color.MAGENTA); g2.draw(shortFat);
+	IceCreamCone i1 = new IceCreamCone(100,250,50,75);
+	g2.setColor(Color.BLUE); g2.draw(i1);
 	
-	IceCreamCone h1 = new IceCreamCone(100,250,50,75);
-	g2.setColor(Color.CYAN); g2.draw(h1);
+	// Make a black ice cream that's half the size, 
+	// and moved over 100 pixels in x direction
+	Shape i2 = ShapeTransforms.scaledCopyOfLL(i1,0.5,0.5);
+        i2 = ShapeTransforms.translatedCopyOf(i2,100,0);
+	g2.setColor(Color.BLACK); g2.draw(i2);
 	
-	// Make a black house that's half the size, 
-	// and moved over 150 pixels in x direction
-	Shape h2 = ShapeTransforms.scaledCopyOfLL(h1,0.5,0.5);
-	h2 = ShapeTransforms.translatedCopyOf(h2,150,0);
-	g2.setColor(Color.BLACK); g2.draw(h2);
-	
-	// Here's a house that's 4x as big (2x the original)
+	// Here's an ice cream cone that's 4x as big (2x the original)
 	// and moved over 150 more pixels to right.
-	h2 = ShapeTransforms.scaledCopyOfLL(h2,4,4);
-	h2 = ShapeTransforms.translatedCopyOf(h2,150,0);
+	i2 = ShapeTransforms.scaledCopyOfLL(i2,4,4);
+	i2 = ShapeTransforms.translatedCopyOf(i2,150,0);
 	
 	// We'll draw this with a thicker stroke
 	Stroke thick = new BasicStroke (4.0f, BasicStroke.CAP_BUTT, BasicStroke.JOIN_BEVEL);       
@@ -106,30 +103,29 @@ public class AllMyDrawings
 	Stroke orig=g2.getStroke();
 	g2.setStroke(thick);
 	g2.setColor(new Color(0x002FA7)); 
-	g2.draw(h2); 
+	g2.draw(i2); 
 	
-	// Draw two houses with Windows
+	// Draw two ice cream cones with toppings
 	
-	IceCreamWithToppings hw1 = new IceCreamWithToppings(50,350,40,75);
-	IceCreamWithToppings hw2 = new IceCreamWithToppings(200,350,200,100);
+	IceCreamWithToppings ic1 = new IceCreamWithToppings(50,350,40,75);
+	IceCreamWithToppings ic2 = new IceCreamWithToppings(200,350,200,100);
 	
-	g2.draw(hw1);
+	g2.draw(ic1);
 	g2.setColor(new Color(0x8F00FF)); 
 	
-	// Rotate the second house 45 degrees around its center.
-	Shape hw3 = ShapeTransforms.rotatedCopyOf(hw2, Math.PI/4.0);
+	// Rotate the second ice cream 45 degrees around its center.
+	Shape ic3 = ShapeTransforms.rotatedCopyOf(ic2, Math.PI/4.0);
 	
-	g2.draw(hw3);
+	g2.draw(ic3);
 	
 	// @@@ FINALLY, SIGN AND LABEL YOUR DRAWING
 	
 	g2.setStroke(orig);
 	g2.setColor(Color.BLACK); 
-	g2.drawString("ice cream and a few houses by Kate Perkins", 20,20);
+	g2.drawString("ice cream by Kate Perkins", 20,20);
     }
     
-    /** Draw a different picture with a few houses and coffee cups
-     */
+    /** Draw a different picture with a few ice cream cones with and without toppings */
     
     public static void drawPicture3(Graphics2D g2) {
 	
@@ -138,13 +134,13 @@ public class AllMyDrawings
 	g2.drawString("A bunch of ice cream cones", 20,20);
 	
 	
-	// Draw some coffee cups.
+	// Draw some ice cream
 	
-	CoffeeCup large = new CoffeeCup(100,50,225,150);
-	CoffeeCup smallCC = new CoffeeCup(20,50,40,30);
+	IceCreamCone big = new IceCreamCone(100,50,225,150);
+	IceCreamCone small = new IceCreamCone(20,50,40,30);
 	
-	g2.setColor(Color.RED);     g2.draw(large);
-	g2.setColor(Color.GREEN);   g2.draw(smallCC);
+	g2.setColor(Color.RED);     g2.draw(big);
+	g2.setColor(Color.GREEN);   g2.draw(small);
 	
     }
 }
