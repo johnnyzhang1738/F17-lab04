@@ -5,7 +5,7 @@ import java.awt.geom.Rectangle2D;
 import java.awt.geom.Ellipse2D;
 import java.awt.geom.Line2D;
 /**
-   A Door with a 3 by 3window
+   A Door with a 3 by 3 window
 
    @author Erick Suarez
    @version for CS56, F17, UCSB
@@ -15,6 +15,10 @@ public class DoorWithWindow extends Door implements Shape
 {
     /**
      * Constructor for objects of class DoorWithWindow
+     @param x x coord of lower left corner of Door
+     @param y y coord of lower left corner of Door
+     @param width width of the Door
+     @param height of Door
      */
     public DoorWithWindow(double x, double y, double width, double height)
     {
