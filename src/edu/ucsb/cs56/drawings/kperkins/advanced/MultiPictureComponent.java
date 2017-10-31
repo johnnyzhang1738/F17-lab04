@@ -7,7 +7,8 @@ import javax.swing.JComponent;
 /**
    A component that draws a Picture by Kate Perkins
    
-   @author Kate Perkins
+   @author Phill Conrad (original drawing)
+   @author Kate Perkins (ice cream drawings)
    @version CS56, F17, UCSB
 */
 

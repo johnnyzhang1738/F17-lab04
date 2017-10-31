@@ -24,8 +24,8 @@ public class IceCreamCone extends GeneralPathWrapper implements Shape
     /**
        Constructor
        
-       @param x x coord of lower left corner of cone
-       @param y y coord of lower left corner of cone
+       @param x x coord of left corner of cone
+       @param y y coord of left corner of cone
        @param width width of the cone
        @param height of ice cream cone (including cone and ice cream)
     */
