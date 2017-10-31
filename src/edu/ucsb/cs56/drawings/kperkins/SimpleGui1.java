@@ -19,7 +19,8 @@ public class SimpleGui1 {
     
     public static void main (String[] args) {
 	JFrame frame = new JFrame() ;
-	
+
+	//changed button name
 	JButton button = new JButton("Click click click") ;
 	
 	java.awt.Color myColor = new java.awt.Color(000,255,204);   // R, G, B values.
