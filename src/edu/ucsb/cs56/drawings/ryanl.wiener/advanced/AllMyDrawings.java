@@ -23,6 +23,9 @@ public class AllMyDrawings
      */
     
     public static void drawPicture1(Graphics2D g2) {
+		Stroke orig=g2.getStroke();
+		Stroke thick = new BasicStroke (4.0f, BasicStroke.CAP_BUTT, BasicStroke.JOIN_BEVEL);       
+		g2.setStroke(thick);
 		// draw some glasses
 		Glasses glass1 = new Glasses(100,250,50,75);
 		g2.setColor(Color.CYAN);
@@ -38,14 +41,11 @@ public class AllMyDrawings
 		glass2 = ShapeTransforms.translatedCopyOf(glass2,150,0);
 		
 		// We'll draw this with a thicker stroke
-		Stroke thick = new BasicStroke (4.0f, BasicStroke.CAP_BUTT, BasicStroke.JOIN_BEVEL);       
 		
 		// for hex colors, see (e.g.) http://en.wikipedia.org/wiki/List_of_colors
 		// #002FA7 is "International Klein Blue" according to Wikipedia
 		// In HTML we use #, but in Java (and C/C++) its 0x
 		
-		Stroke orig=g2.getStroke();
-		g2.setStroke(thick);
 		g2.setColor(new Color(0x002FA7)); 
 		g2.draw(glass2); 
 		// draw some shades
