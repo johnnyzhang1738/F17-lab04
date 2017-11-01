@@ -31,7 +31,6 @@ public class AllMyDrawings
 		Glasses glass1 = new Glasses(100,250,50,75);
 		g2.setColor(Color.CYAN);
 		g2.draw(glass1);
-	/*	
 		
 		Shape glass2 = ShapeTransforms.scaledCopyOfLL(glass1,0.5,0.5);
 		glass2 = ShapeTransforms.translatedCopyOf(glass2,150,0);
@@ -61,8 +60,7 @@ public class AllMyDrawings
 		
 		g2.setStroke(orig);
 		g2.setColor(Color.BLACK); 
-		g2.drawString("A few glasses and shades by Ryan Wiener. This is the mac test!!!!!!!!!", 20,20);
-		*/
+		g2.drawString("A few glasses and shades by Ryan Wiener", 20,20);
     }
     
     
