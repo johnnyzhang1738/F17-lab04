@@ -41,7 +41,7 @@ public class Lock extends GeneralPathWrapper implements Shape
         
         double baseUpperLeftY = y + armHeight;
         
-        // Make the first story
+        // Make the base
         
         Rectangle2D.Double base = 
             new Rectangle2D.Double(x, baseUpperLeftY ,
@@ -56,22 +56,11 @@ public class Lock extends GeneralPathWrapper implements Shape
 
 	rightArm = ShapeTransforms.translatedCopyOf(rightArm, width, 0.0);
 	
-        // make the roof.   Remember that y goes DOWN the page,
-        // so we ADD to y to get a "lower" value on the screen
-
-	//   Line2D.Double leftRoof = 
-	//  new Line2D.Double (x, y + roofHeight,
-	//                         x + width/2.0, y);
+        // put the whole lock together
 	
-    //Line2D.Double rightRoof =
-    //      new Line2D.Double (x + width/2.0, y,
-    //                         x + width, y + roofHeight);
-	
-        // put the whole key together
-	
-        GeneralPath wholeKey = this.get();
-        wholeKey.append(base, false);
-        wholeKey.append(leftArm, false);
-        wholeKey.append(rightArm, false);    
+        GeneralPath wholeLock = this.get();
+        wholeLock.append(base, false);
+        wholeLock.append(leftArm, false);
+        wholeLock.append(rightArm, false);    
     }
 }

@@ -8,16 +8,16 @@ import edu.ucsb.cs56.drawings.utilities.ShapeTransforms;
 
 
 /**
-   A Lock
+   A Lock with keyhole
       
-   @author Phill Conrad 
-   @version for CS56, W16, UCSB
+   @author Cindy Lu
+   @version for CS56, F17, UCSB
    
 */
 public class LockWithKeyhole extends Lock implements Shape
 {
     /**
-     * Constructor for objects of class CoffeeCup
+     * Constructor for objects of class LockWithKeyhole
      */
     public LockWithKeyhole(double x, double y, double width, double height)
     {
