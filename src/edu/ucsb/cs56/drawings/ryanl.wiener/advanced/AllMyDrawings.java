@@ -19,25 +19,21 @@ import edu.ucsb.cs56.drawings.utilities.GeneralPathWrapper;
 
 public class AllMyDrawings
 {
-    /** Draw a picture with a few houses 
+    /** Draw a picture with a few glasses and shades
      */
     
     public static void drawPicture1(Graphics2D g2) {
-	
+		// draw some glasses
 		Glasses glass1 = new Glasses(100,250,50,75);
 		g2.setColor(Color.CYAN);
 		g2.draw(glass1);
 		
-		// Make a black house that's half the size, 
-		// and moved over 150 pixels in x direction
 		
 		Shape glass2 = ShapeTransforms.scaledCopyOfLL(glass1,0.5,0.5);
 		glass2 = ShapeTransforms.translatedCopyOf(glass2,150,0);
 		g2.setColor(Color.BLACK);
 		g2.draw(glass2);
 		
-		// Here's a house that's 4x as big (2x the original)
-		// and moved over 150 more pixels to right.
 		glass2 = ShapeTransforms.scaledCopyOfLL(glass2,4,4);
 		glass2 = ShapeTransforms.translatedCopyOf(glass2,150,0);
 		
@@ -52,8 +48,7 @@ public class AllMyDrawings
 		g2.setStroke(thick);
 		g2.setColor(new Color(0x002FA7)); 
 		g2.draw(glass2); 
-		
-		// Draw two houses with Windows
+		// draw some shades
 		Shades s1 = new Shades(50,350,40,75);
 		Shades s2 = new Shades(200,350,200,100);
 		
@@ -69,76 +64,38 @@ public class AllMyDrawings
     }
     
     
-    /** Draw a picture with a few houses and coffee cups
+    /** Draw a picture with a few glasses and shades
      */
     public static void drawPicture2(Graphics2D g2) {
+		//draw some shades
+		Shades small = new Shades(20,50,40,30);
+		Shades shortFat = new Shades(20,250,40,20);
+		
+		g2.setColor(Color.GREEN); 
+	  	g2.draw(small);
+		g2.setColor(Color.MAGENTA);
+	   	g2.draw(shortFat);
+
+		//draw some glasses
+		
+		Glasses glass1 = new Glasses(50,350,40,75);
+		Glasses glass2 = new Glasses(400,50,200,100);
+		
+		g2.draw(glass1);
+		g2.draw(glass2);
+		g2.setColor(new Color(0x8F00FF)); 
+		
+		Shape glass3 = ShapeTransforms.rotatedCopyOf(new Glasses(200,250,200,100), Math.PI/4.0);
+		
+		g2.draw(glass3);
+		
+		// @@@ FINALLY, SIGN AND LABEL YOUR DRAWING
 	
-	// Draw some coffee cups.
-	
-	Shades large = new Shades(100,50,225,150);
-	Shades small = new Shades(20,50,40,30);
-	Shades tallSkinny = new Shades(20,150,20,40);
-	Shades shortFat = new Shades(20,250,40,20);
-	
-	g2.setColor(Color.RED);     
-	g2.draw(large);
-	g2.setColor(Color.GREEN); 
-  	g2.draw(small);
-	g2.setColor(Color.BLUE); 
- 	g2.draw(tallSkinny);
-	g2.setColor(Color.MAGENTA);
-   	g2.draw(shortFat);
-	
-	Glasses glass1 = new Glasses(100,250,50,75);
-	g2.setColor(Color.CYAN); 
-	g2.draw(glass1);
-	
-	// Make a black house that's half the size, 
-	// and moved over 150 pixels in x direction
-	Shape glass2 = ShapeTransforms.scaledCopyOfLL(glass1,0.5,0.5);
-	glass2 = ShapeTransforms.translatedCopyOf(glass2,150,0);
-	g2.setColor(Color.BLACK);
-	g2.draw(glass2);
-	
-	// Here's a house that's 4x as big (2x the original)
-	// and moved over 150 more pixels to right.
-	glass2 = ShapeTransforms.scaledCopyOfLL(glass2,4,4);
-	glass2 = ShapeTransforms.translatedCopyOf(glass2,150,0);
-	
-	// We'll draw this with a thicker stroke
-	Stroke thick = new BasicStroke (4.0f, BasicStroke.CAP_BUTT, BasicStroke.JOIN_BEVEL);       
-	
-	// for hex colors, see (e.g.) http://en.wikipedia.org/wiki/List_of_colors
-	// #002FA7 is "International Klein Blue" according to Wikipedia
-	// In HTML we use #, but in Java (and C/C++) its 0x
-	
-	Stroke orig=g2.getStroke();
-	g2.setStroke(thick);
-	g2.setColor(new Color(0x002FA7)); 
-	g2.draw(glass2); 
-	
-	// Draw two houses with Windows
-/*	
-	HouseWithWindows hw1 = new HouseWithWindows(50,350,40,75);
-	HouseWithWindows hw2 = new HouseWithWindows(200,350,200,100);
-	
-	g2.draw(hw1);
-	g2.setColor(new Color(0x8F00FF)); 
-	
-	// Rotate the second house 45 degrees around its center.
-	Shape hw3 = ShapeTransforms.rotatedCopyOf(hw2, Math.PI/4.0);
-	
-	g2.draw(hw3);
-	
-	// @@@ FINALLY, SIGN AND LABEL YOUR DRAWING
-	
-	g2.setStroke(orig);
-	g2.setColor(Color.BLACK); 
-	*/
-	g2.drawString("A bunch of glasses and shades by Ryan Wiener", 20,20);
+		g2.setColor(Color.BLACK); 
+		g2.drawString("A bunch of glasses and shades by Ryan Wiener", 20,20);
     }
     
-    /** Draw a different picture with a few houses and coffee cups
+    /** Draw a different picture with a few glasses and shades
      */
     
     public static void drawPicture3(Graphics2D g2) {
@@ -148,7 +105,7 @@ public class AllMyDrawings
 		g2.drawString("A bunch of glasses and shades by Ryan Wiener", 20,20);
 		
 		
-		// Draw some coffee cups.
+		// Draw some glasses and shades
 		
 		Glasses largeGlasses = new Glasses(100,50,225,150);
 		Glasses smallGlasses = new Glasses(20,50,40,30);

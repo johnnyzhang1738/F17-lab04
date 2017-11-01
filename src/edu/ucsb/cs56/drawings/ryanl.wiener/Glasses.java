@@ -13,7 +13,6 @@ import edu.ucsb.cs56.drawings.utilities.GeneralPathWrapper;
    the Shape interface, and so can be drawn, as well as
    rotated, scaled, etc.
       
-   @author Phill Conrad 
    @author Ryan Wiener
    @version for CS56, F17, UCSB
    
@@ -23,10 +22,10 @@ public class Glasses extends GeneralPathWrapper implements Shape
     /**
        Constructor
        
-       @param x x coord of lower left corner of house
-       @param y y coord of lower left corner of house
-       @param width width of the house
-       @param height of house (including first story and second story)
+       @param x x coord of lower left corner of glasses
+       @param y y coord of lower left corner of glasses
+       @param width width of the glasses
+       @param height of glasses
     */
     public Glasses(double x, double y, double width, double height)
     {
@@ -43,7 +42,7 @@ public class Glasses extends GeneralPathWrapper implements Shape
 		Ellipse2D rightLense = new Ellipse2D.Double(x + 3 * width / 4, y + height / 2, width / 4, height / 2);
 		Line2D rightFrame = new Line2D.Double(x + 3 * width / 4, y, x + width, y + 3 * height / 4);
 	
-        // put the whole house together
+        // put the glasses together
 	
         GeneralPath glasses = this.get();
         glasses.append(leftFrame, false);    
