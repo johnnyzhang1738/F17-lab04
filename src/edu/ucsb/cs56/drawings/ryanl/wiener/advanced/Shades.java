@@ -2,6 +2,7 @@ package edu.ucsb.cs56.drawings.ryanl.wiener.advanced;
 import java.awt.geom.GeneralPath;  
 import java.awt.Shape; 
 import java.awt.geom.Ellipse2D;
+import edu.ucsb.cs56.drawings.ryanl.wiener.Glasses;
 
 /**
    Shades
