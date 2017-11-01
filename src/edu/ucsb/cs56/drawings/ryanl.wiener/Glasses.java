@@ -1,4 +1,4 @@
-package edu.ucsb.cs56.drawings.ryanl.wiener.advanced;
+package edu.ucsb.cs56.drawings.ryanl.wiener;
 import java.awt.geom.GeneralPath; // combinations of lines and curves
 import java.awt.Shape; // general class for shapes
 
@@ -37,17 +37,18 @@ public class Glasses extends GeneralPathWrapper implements Shape
         // hard coded a particular drawing, this may be an easier
         // way.
 
-		double glassesWidth = width / 4;
-		double frameY = y + height / 2;
-		Ellipse2D leftLense = new Ellipse2D.Double(x, y, glassesWidth, height);
-		Ellipse2D rightLense = new Ellipse2D.Double(x, y, glassesWidth, height);
-		Line2D rightFrame = new Line2D.Double(x + 2 * glassesWidth, frameY, x + width - 2 * glassesWidth, frameY);
-		//Line2D rightFrame = new Line2D(x, frameY, x + width, frameY);
+		Line2D leftFrame = new Line2D.Double(x, y, x + width / 4, y + 3 * height / 4);
+		Ellipse2D leftLense = new Ellipse2D.Double(x + width / 4, y + height / 2, width / 4, height / 2);
+		Line2D middleFrame = new Line2D.Double(x + width / 2, y + 3 * height / 4, x + 3 * width / 4, y + 3 * height / 4);
+		Ellipse2D rightLense = new Ellipse2D.Double(x + 3 * width / 4, y + height / 2, width / 4, height / 2);
+		Line2D rightFrame = new Line2D.Double(x + 3 * width / 4, y, x + width, y + 3 * height / 4);
 	
         // put the whole house together
 	
         GeneralPath glasses = this.get();
+        glasses.append(leftFrame, false);    
         glasses.append(leftLense, false);
+        glasses.append(middleFrame, false);    
         glasses.append(rightLense, false);
         glasses.append(rightFrame, false);    
     }
