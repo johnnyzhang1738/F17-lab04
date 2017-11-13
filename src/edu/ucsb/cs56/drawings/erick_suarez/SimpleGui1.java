@@ -1,4 +1,4 @@
-package edu.ucsb.cs56.drawings.erick_suarez;
+atpackage edu.ucsb.cs56.drawings.erick_suarez;
 
 import javax.swing.*;
 
@@ -7,7 +7,7 @@ import javax.swing.*;
 
     @author Head First Java, 2nd Edition p. 355
     @author P. Conrad (who only typed it in and added the Javadoc comments)
-    @author TODO: Add additional author here
+    @author TODO: Erick Suarez (changed color and text)
     @version CS56, Spring 2013, UCSB
 */
 
